@@ -1,0 +1,15 @@
+{
+  "name": "number-guesser-starting",
+  "version": "1.0.0",
+  "description": "I dont know what Im doing",
+  "main": "game.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
