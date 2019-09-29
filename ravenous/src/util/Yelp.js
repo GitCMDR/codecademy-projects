@@ -1,4 +1,4 @@
-const apiKey = 'TODO:Set Up ENV'
+const apiKey = 'API_KEY_GOES_HERE'
 
 const Yelp = {
     search(term, location, sortBy) {
@@ -13,10 +13,22 @@ const Yelp = {
         }).then(jsonResponse => {
             if(jsonResponse.businesses) {
                 return jsonResponse.businesses.map(business => {
-                    return {}
+                    return {
+                        id: business.id,
+                        'imageSrc': business.image_url,
+                        'name': business.name,
+                        'address': business.location.address1,
+                        'city': business.location.city,
+                        'state': business.location.state,
+                        'zipCode': business.location.zip_code,
+                        'category': business.categories[0].title,
+                        'rating': business.rating,
+                        'reviewCount': business.review_count
+                    }
                 });
             }
         })
     }
+}
 
-};
+export default Yelp;
